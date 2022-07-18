@@ -14,25 +14,26 @@ export default function Login() {
     const [login , setLogin]  = useState(true)
     const handleChange = (e)=>{
         const {name, value}  = e.target
-        console.log(value);
+        // console.log(value);
         setFormValue({...formValue, [name] : value});
+        
         
     }
     const handleSubmit = (e)=>{
-        e.preventDefault();
-        setFormError(Validation(formValue));
-        if(formEroor.flag){
-          setLogin(false)
-        }
-        }
-        console.log(login)
+      e.preventDefault();
+      setFormError(Validation(formValue));
+      if(formEroor.flag){
+        setLogin(false)
+      }
+      
+    }
   return (
     <>
     
      {login  ? 
       <Container className="mt-3">
         <h1 className="text-center">Login Please</h1>
-      <Form onSubmit={handleSubmit}>
+      <Form >
         
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -51,7 +52,7 @@ export default function Login() {
         {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group> */}
-        <Button variant="primary" type="submit" >
+        <Button variant="primary" type="submit" onClick={handleSubmit} >
           Submit
         </Button>
       </Form> 
@@ -59,7 +60,7 @@ export default function Login() {
       
        :
       <div>
-        <button onClick={()=>setLogin(true)}>log out</button>
+        <button onClick={()=>setLogin(true)}>Log out</button>
         <Products/>
         </div>
         } 

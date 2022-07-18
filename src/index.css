@@ -1,8 +1,27 @@
-p{
+p {
   color: red;
 }
-.itemFlex{
+
+/* .itemFlex{
   width: 300px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+} */
+.card-img,
+.card-img-top {
+  object-fit: contain;
+  width: 300px;
+  height: 300px;
+}
+
+.inputContainer {
+  margin: .5rem;
+}
+
+label {
+  padding: 10px;
+}
+
+.btn-primary {
+  margin: .5rem;
 }

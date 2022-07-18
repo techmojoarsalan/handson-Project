@@ -1,13 +1,12 @@
 import React, { createContext , useContext } from 'react'
 import products from "./products.json"
-export const ContextApi =  createContext();
+export const ContextApi =  createContext(products);
 
 
 function Context({children}){
 //  const obj = { name : "Arsalan"}
     
-  return (
-    <ContextApi.Provider value={products}>{children}</ContextApi.Provider>
+  return ( <ContextApi.Provider value={products}>{children}</ContextApi.Provider>
   )
 }
 

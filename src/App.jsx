@@ -3,11 +3,11 @@ import Login from "./Component/Login";
 import Context from "./Context";
 
 function App() {
-  return <div>
+  return <>
     {/* <Context/> */}
       <Login/>
     {/* <Context/> */}
-  </div>;
+  </>;
 }
 
 export default App;
