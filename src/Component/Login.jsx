@@ -60,7 +60,7 @@ export default function Login() {
       
        :
       <div>
-        <button onClick={()=>setLogin(true)}>Log out</button>
+        <Button className="float-end" variant="warning" onClick={()=>setLogin(true)}>Log out</Button>
         <Products/>
         </div>
         } 

@@ -4,9 +4,9 @@ import Context from "./Context";
 
 function App() {
   return <>
-    {/* <Context/> */}
+    <Context/>
       <Login/>
-    {/* <Context/> */}
+    <Context/>
   </>;
 }
 

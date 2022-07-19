@@ -25,7 +25,7 @@ function ProductCard({ products, title, price, description, images }) {
 
 
       <Container>
-        <Row xs={1} md={4} className="g-4">
+        <Row xs={1} md={4} >
          
           {products.map((item)=>
            <Link to={`/product/${item.id}`} key={item.id}>

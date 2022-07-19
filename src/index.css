@@ -25,3 +25,10 @@ label {
 .btn-primary {
   margin: .5rem;
 }
+a{
+  text-decoration: none !important;
+}
+.image:hover{
+  transition: .2s;
+  transform: scale(1.1);
+}
