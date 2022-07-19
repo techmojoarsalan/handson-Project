@@ -4,6 +4,7 @@ import { useAppContext } from '../Context';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useNavigate, Link } from "react-router-dom"
+import Carousel from 'react-bootstrap/Carousel';
 // import products from "../products.json"
 
 function ProductsDetails() {
@@ -24,20 +25,23 @@ function ProductsDetails() {
         <>
             <Button onClick={handleClick}>back</Button>
             <Link to='/products'>Products</Link>
-            {details.map((item) =>
-
-                <Card key={item.id} style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={item.images[0]} />
-                    {/* <Card.Img  variant="top" src={item.images[2]} /> */}
-
-                    <Card.Body>
-                        <Card.Title>{item.title}</Card.Title>
-                        <Card.Text>
-                            {item.description}
-                        </Card.Text>
-                        <Button variant="primary"> price : ${item.price}</Button>
-                    </Card.Body>
-                </Card>
+            {details.map((item,idx) =><div key={productId} className='d-flex justify-content-center' >
+                    <Card  style={{ width: '18rem' }}>
+                        <Carousel>
+                        {item.images.map((img)=> <Carousel.Item><Card.Img variant="top" src={img} /> </Carousel.Item>)}
+                        {/* <Card.Img variant="top" src={item.images.map((i)=>i)} /> */}
+                    
+                        </Carousel>
+                        {/* <Card.Img  variant="top" src={item.images[2]} /> */}
+                        <Card.Body>
+                            <Card.Title>{item.title}</Card.Title>
+                            <Card.Text>
+                                {item.description}
+                            </Card.Text>
+                            <Button variant="primary"> price : ${item.price}</Button>
+                        </Card.Body>
+                    </Card>
+                </div>
             )}
         </>
     )
